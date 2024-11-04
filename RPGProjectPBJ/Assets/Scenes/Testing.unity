@@ -294,6 +294,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64a0feee8053050499ad4a1569483880, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Controller: {fileID: 1934307693}
 --- !u!1 &1340729891
 GameObject:
   m_ObjectHideFlags: 0
@@ -574,7 +575,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eef892295989e5140a3c08d6ba053db7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player: {fileID: 366032462}
   speed: 10
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

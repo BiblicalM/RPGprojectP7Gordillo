@@ -5,7 +5,8 @@ using UnityEngine;
 
 public class Corpse : MonoBehaviour
 {
-    public MonoScript HostBehavior;
+    public MonoBehaviour HostBehavior;
+    
     // Start is called before the first frame update
     void Start()
     {

@@ -1,11 +1,13 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 
 public class PlayerInputManager : MonoBehaviour
 {
-
+    public GameObject Controller;
 
     // Start is called before the first frame update
     void Start()
@@ -19,11 +21,14 @@ public class PlayerInputManager : MonoBehaviour
         
     }
 
-    private void OnCollisionEnter2D(Collision2D other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        if (CompareTag("Corpse"))
+        if (other.gameObject.tag == "Corpse")
         {
-
+            Destroy(Controller.GetComponent<MonoBehaviour>());
+            MonoBehaviour HostController = other.GetComponent<Corpse>().HostBehavior;
+            
         }
     }
 }
+
