@@ -5,9 +5,10 @@ using UnityEngine;
 public class EnemyLich : MonoBehaviour
 {
     public GameObject fireBallProjectile;
+    public AnimationClip idleAnim;
     public Transform castSpellPos;
     private int enemyHealth = 500;
-    
+    private Animator bossAnim;
     private bool castSpell;
     // Start is called before the first frame update
     void Start()
@@ -15,6 +16,8 @@ public class EnemyLich : MonoBehaviour
         //should we make the fireball start at the beginning or no?
         castSpell = false;
         StartCoroutine(CastingTime());
+        bossAnim = GetComponent<Animator>();
+
     }
 
     // Update is called once per frame
@@ -26,6 +29,7 @@ public class EnemyLich : MonoBehaviour
     {
         //cooldown to cast fireball
         yield return new WaitForSeconds(10);
+        
         castSpell = true;
     }
 
@@ -34,9 +38,12 @@ public class EnemyLich : MonoBehaviour
         //if castSpell is true then spawn a fireball, then restart cooldown.
         if (castSpell)
         {
+            bossAnim.SetTrigger("Fireball_trig");
             Instantiate(fireBallProjectile, castSpellPos.transform.position, fireBallProjectile.transform.rotation);
             castSpell = false;
             StartCoroutine(CastingTime());
+            
         }
     }
 }
+
