@@ -5,16 +5,14 @@ using UnityEngine.UIElements;
 
 public class SlimeController : MonoBehaviour
 {
-    GameObject Player;
     private Rigidbody2D rb;
     public float speed = 10;
     private Animator playerAnim;
-
+    public string powerType;
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        Player = GameObject.Find("Player");
         playerAnim = GetComponent<Animator>();
     }
 
@@ -28,9 +26,19 @@ public class SlimeController : MonoBehaviour
     {
         float verticalInput = Input.GetAxis("Vertical");
         float horizontalInput = Input.GetAxis("Horizontal");
-        Player.transform.Translate(horizontalInput * speed * Time.deltaTime, verticalInput * speed * Time.deltaTime, 0);
+        //Vector2 Movement = (horizontalInput * speed * Time.deltaTime, verticalInput * speed * Time.deltaTime);
+        transform.Translate(horizontalInput * speed * Time.deltaTime, verticalInput * speed * Time.deltaTime, 0);
+        //rb.AddForce(Movement);
         playerAnim.SetFloat("Speed_F", horizontalInput);
 
     }
 
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.tag == "Corpse")
+        {
+            
+
+        }
+    }
 }
