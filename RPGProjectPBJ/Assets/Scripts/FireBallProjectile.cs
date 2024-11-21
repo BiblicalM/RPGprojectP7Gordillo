@@ -30,7 +30,7 @@ public class FireBallProjectile : MonoBehaviour
     IEnumerator DestroyFireBall()
     {
         //maybe make cooldown longer idk?
-        yield return new WaitForSeconds(10);
+        yield return new WaitForSeconds(20);
         Destroy(gameObject);
     }
 
