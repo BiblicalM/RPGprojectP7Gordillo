@@ -8,20 +8,31 @@ public class SlimeController : MonoBehaviour
     private Rigidbody2D rb;
     private BoxCollider2D playerCollider;
     public float speed = 10;
+
     private Animator playerAnim;
+    private SpriteRenderer playerSprites;
     public string powerType;
+
+    public int maxHealth = 20;
+    public int realHealth;
+    public HealthUI healthBar;
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         playerCollider = GetComponent<BoxCollider2D>();
         playerAnim = GetComponent<Animator>();
+        playerSprites = GetComponent<SpriteRenderer>();
+
+        realHealth = maxHealth;
+        healthBar.SetMaxHealth(maxHealth);
     }
 
     // Update is called once per frame
     void Update()
     {
         PlayerMovement();
+
     }
 
     public void PlayerMovement()
@@ -32,8 +43,18 @@ public class SlimeController : MonoBehaviour
         //transform.Translate(horizontalInput * speed * Time.deltaTime, verticalInput * speed * Time.deltaTime, 0);
 
         rb.velocity = new Vector2 (speed * horizontalInput * Time.deltaTime, verticalInput * speed * Time.deltaTime);
+        if(horizontalInput < 0)
+        {
+            playerSprites.flipX = true;
+        }
+        else if(horizontalInput > 0)
+        {
+            playerSprites.flipX = false;
+        }
+       
+
         //rb.AddForce(Movement);
-        playerAnim.SetFloat("Speed_F", horizontalInput);
+        playerAnim.SetFloat("Speed_f", Mathf.Abs(rb.velocity.x));
 
     }
 
@@ -45,4 +66,5 @@ public class SlimeController : MonoBehaviour
 
         }
     }
+
 }
