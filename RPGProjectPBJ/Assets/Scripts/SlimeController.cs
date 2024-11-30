@@ -32,6 +32,9 @@ public class SlimeController : MonoBehaviour
     void Update()
     {
         PlayerMovement();
+        healthBar.SetHealth(realHealth);
+        healthBar.SetMaxHealth(maxHealth);
+        
 
     }
 
@@ -51,10 +54,12 @@ public class SlimeController : MonoBehaviour
         {
             playerSprites.flipX = false;
         }
+        
        
 
         //rb.AddForce(Movement);
         playerAnim.SetFloat("Speed_f", Mathf.Abs(rb.velocity.x));
+       
 
     }
 
@@ -65,6 +70,19 @@ public class SlimeController : MonoBehaviour
             
 
         }
+    }
+
+    public void TakeDamage( int damage)
+    {
+        realHealth -= damage;
+        if(realHealth <= 0)
+        {
+            Debug.Log("Game Over");
+        }
+    }
+    void PlayerAttack()
+    {
+
     }
 
 }

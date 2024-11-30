@@ -7,7 +7,7 @@ public class EnemyLich : MonoBehaviour
     public GameObject fireBallProjectile;
     public AnimationClip idleAnim;
     public Transform castSpellPos;
-    private int enemyHealth = 500;
+    
     private Animator bossAnim;
     private bool castSpell;
     // Start is called before the first frame update
