@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 6778531359759314996}
   - component: {fileID: 9192857354334966377}
   - component: {fileID: 15678267473328568}
+  - component: {fileID: 3555543603303226710}
   m_Layer: 0
   m_Name: FireBall
   m_TagString: Untagged
@@ -172,7 +173,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5ae10ddaff4ddf4c86b369b41ac8a8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
+  speed: 2
 --- !u!114 &15678267473328568
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -185,5 +186,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4da4bd7d6cd4e042890df103781254a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerController: {fileID: 5864007107124604855, guid: 251bf69f50a08864b8bc8ce6cf9674fd, type: 3}
   damage: 20
+--- !u!95 &3555543603303226710
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7887398963211560609}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8c6d339fccedac0408dcf6774c1a2509, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

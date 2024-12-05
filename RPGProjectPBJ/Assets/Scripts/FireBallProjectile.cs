@@ -34,5 +34,10 @@ public class FireBallProjectile : MonoBehaviour
         Destroy(gameObject);
     }
 
+    void OnCollision2D(Collision collision)
+    {
+        Destroy(gameObject);
+    }
+
 
 }
