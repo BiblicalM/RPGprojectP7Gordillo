@@ -14,7 +14,7 @@ public class FireBallProjectile : MonoBehaviour
     {
         rb2d = GetComponent<Rigidbody2D>();
         enemyCollider = GetComponent<BoxCollider2D>();
-        player = GameObject.Find("Player");
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 
     // Update is called once per frame
