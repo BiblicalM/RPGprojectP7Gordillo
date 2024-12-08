@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Corpse
   - BossEnemy
+  - Enemy
   layers:
   - Default
   - TransparentFX

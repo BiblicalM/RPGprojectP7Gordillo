@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Corpse : MonoBehaviour
 {
-    public MonoBehaviour HostBehavior;
+    
     
     // Start is called before the first frame update
     void Start()
@@ -17,5 +17,13 @@ public class Corpse : MonoBehaviour
     void Update()
     {
         
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            collision.GetComponent<PlayerSwitch>().switchCharacter = true;
+        }
+
     }
 }

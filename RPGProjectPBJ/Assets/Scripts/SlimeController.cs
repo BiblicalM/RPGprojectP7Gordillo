@@ -14,7 +14,9 @@ public class SlimeController : MonoBehaviour
     public string powerType;
 
     public int maxHealth = 20;
+    
     public int realHealth;
+    public bool canAttack;
     public HealthUI healthBar;
     // Start is called before the first frame update
     void Start()
