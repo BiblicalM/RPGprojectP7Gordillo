@@ -19,4 +19,9 @@ public class EnemyHealth : MonoBehaviour
     {
         enemyHealth.SetHealth(healthEnemy);
     }
+
+    public void TakeDamage(int damage)
+    {
+        healthEnemy -= damage;
+    }
 }

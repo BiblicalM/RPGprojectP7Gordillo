@@ -6,24 +6,31 @@ using UnityEngine.UIElements;
 public class SlimeController : MonoBehaviour
 {
     private Rigidbody2D rb;
+    private bool coolDown = false;
     private BoxCollider2D playerCollider;
     public float speed = 10;
 
-    private Animator playerAnim;
+    public Animator playerAnim;
+    public Animator slashEffect;
     private SpriteRenderer playerSprites;
     public string powerType;
 
     public int maxHealth = 20;
     
     public int realHealth;
+    public int attackPower;
     public bool canAttack;
+    public Transform attackPoint;
+    public float attackRange = 0.5f;
+    public LayerMask enemyLayers;
+
     public HealthUI healthBar;
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         playerCollider = GetComponent<BoxCollider2D>();
-        playerAnim = GetComponent<Animator>();
+        
         playerSprites = GetComponent<SpriteRenderer>();
 
         realHealth = maxHealth;
@@ -36,7 +43,11 @@ public class SlimeController : MonoBehaviour
         PlayerMovement();
         healthBar.SetHealth(realHealth);
         healthBar.SetMaxHealth(maxHealth);
-        
+        if (Input.GetKeyDown(KeyCode.Mouse0) && coolDown == false && canAttack)
+        {
+            slashEffect.SetTrigger("Attack");
+            PlayerAttack();
+        }
 
     }
 
@@ -61,7 +72,7 @@ public class SlimeController : MonoBehaviour
 
         //rb.AddForce(Movement);
         playerAnim.SetFloat("Speed_f", Mathf.Abs(rb.velocity.x));
-       
+        playerAnim.SetFloat("Speed_up", rb.velocity.y);
 
     }
 
@@ -84,6 +95,30 @@ public class SlimeController : MonoBehaviour
     }
     void PlayerAttack()
     {
+        
+        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
+        foreach(Collider2D enemy in hitEnemies)
+        {
+            enemy.gameObject.GetComponent<EnemyHealth>().TakeDamage(attackPower);
+            coolDown = true;
+        }
+
+        StartCoroutine(CoolDown());
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        if(attackPoint == null)
+        {
+            return;
+        }
+        Gizmos.DrawWireSphere(attackPoint.position, attackRange);
+    }
+
+    IEnumerator CoolDown()
+    {
+        yield return new WaitForSeconds(1);
+        coolDown = false;
 
     }
 

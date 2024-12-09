@@ -23,6 +23,11 @@ public class Corpse : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             collision.GetComponent<PlayerSwitch>().switchCharacter = true;
+            
+        }
+        else
+        {
+            return;
         }
 
     }

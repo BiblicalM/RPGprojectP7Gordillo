@@ -7,7 +7,7 @@ public class EnemyAttacks : MonoBehaviour
     
     public int damage;
     private Rigidbody2D enemyrb;
-    private float strength = 100;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -26,10 +26,10 @@ public class EnemyAttacks : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             collision.gameObject.GetComponent<SlimeController>().TakeDamage(damage);
-            Rigidbody2D playerRb = collision.gameObject.GetComponent<Rigidbody2D>();
-            Vector2 awayfromPlayer = (collision.gameObject.transform.position - transform.position).normalized;
+            
+            
 
-            playerRb.AddForce(awayfromPlayer * strength, ForceMode2D.Impulse);
+            
         }
     }
 

@@ -8,6 +8,7 @@ public class PlayerSwitch : MonoBehaviour
     public GameObject character;
     public GameObject currentCharacter;
     public List<GameObject> otherCharacters;
+    public GameObject corpse;
     
     public int selectCharacter;
     public bool switchCharacter;
@@ -19,6 +20,7 @@ public class PlayerSwitch : MonoBehaviour
         {
             character = otherCharacters[0];
             currentCharacter = character;
+
         }
         SwapCharacter();
     }
@@ -30,13 +32,21 @@ public class PlayerSwitch : MonoBehaviour
          {
              if(selectCharacter == 0)
              {
-                 selectCharacter = otherCharacters.Count + 1;
+                 selectCharacter = otherCharacters.Count - 1;
              }
              else
              {
-                 selectCharacter += 1;
+                 selectCharacter -= 1;
              }
              SwapCharacter();
+             if(corpse != null)
+            {
+                Destroy(corpse);
+            }
+            else
+            {
+                return;
+            }
 
          }
         
