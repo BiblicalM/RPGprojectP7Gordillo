@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class SwitchRoom : MonoBehaviour
 {
-    public string roomName;
+    public int roomName;
     // Start is called before the first frame update
     void Start()
     {
