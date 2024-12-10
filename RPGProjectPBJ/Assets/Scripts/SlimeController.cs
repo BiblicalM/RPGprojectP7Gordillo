@@ -11,6 +11,7 @@ public class SlimeController : MonoBehaviour
     public float speed = 10;
 
     public Animator playerAnim;
+    public GameObject gameManager;
     public Animator slashEffect;
     private SpriteRenderer playerSprites;
     public string powerType;
@@ -32,6 +33,7 @@ public class SlimeController : MonoBehaviour
         playerCollider = GetComponent<BoxCollider2D>();
         
         playerSprites = GetComponent<SpriteRenderer>();
+        
 
         realHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
@@ -45,7 +47,7 @@ public class SlimeController : MonoBehaviour
         healthBar.SetMaxHealth(maxHealth);
         if (Input.GetKeyDown(KeyCode.Mouse0) && coolDown == false && canAttack)
         {
-            slashEffect.SetTrigger("Attack");
+            
             PlayerAttack();
         }
 
@@ -95,11 +97,12 @@ public class SlimeController : MonoBehaviour
     }
     void PlayerAttack()
     {
-        
+        slashEffect.SetTrigger("Attack");
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
         foreach(Collider2D enemy in hitEnemies)
         {
             enemy.gameObject.GetComponent<EnemyHealth>().TakeDamage(attackPower);
+            
             coolDown = true;
         }
 

@@ -949,18 +949,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 329830381737244425, guid: 251bf69f50a08864b8bc8ce6cf9674fd, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.75
-      objectReference: {fileID: 0}
-    - target: {fileID: 329830381737244425, guid: 251bf69f50a08864b8bc8ce6cf9674fd, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.075
-      objectReference: {fileID: 0}
-    - target: {fileID: 329830381737244425, guid: 251bf69f50a08864b8bc8ce6cf9674fd, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 25
-      objectReference: {fileID: 0}
     - target: {fileID: 822262641655538607, guid: 251bf69f50a08864b8bc8ce6cf9674fd, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -969,22 +957,18 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5864007107124604855, guid: 251bf69f50a08864b8bc8ce6cf9674fd, type: 3}
-      propertyPath: speed
-      value: 1250
-      objectReference: {fileID: 0}
-    - target: {fileID: 5864007107124604855, guid: 251bf69f50a08864b8bc8ce6cf9674fd, type: 3}
-      propertyPath: playerAnim
+    - target: {fileID: 5858611699099653501, guid: 251bf69f50a08864b8bc8ce6cf9674fd, type: 3}
+      propertyPath: corpse
       value: 
-      objectReference: {fileID: 2036996674}
+      objectReference: {fileID: 2076636820}
+    - target: {fileID: 5858611699099653501, guid: 251bf69f50a08864b8bc8ce6cf9674fd, type: 3}
+      propertyPath: otherCharacters.Array.data[1]
+      value: 
+      objectReference: {fileID: 6749082320480050844}
     - target: {fileID: 5864007107124604855, guid: 251bf69f50a08864b8bc8ce6cf9674fd, type: 3}
       propertyPath: attackPoint
       value: 
       objectReference: {fileID: 1207473521}
-    - target: {fileID: 5864007107124604855, guid: 251bf69f50a08864b8bc8ce6cf9674fd, type: 3}
-      propertyPath: objectEnabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6749082321507460706, guid: 251bf69f50a08864b8bc8ce6cf9674fd, type: 3}
       propertyPath: m_Name
       value: Player
@@ -1032,10 +1016,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 6749082321507460706, guid: 251bf69f50a08864b8bc8ce6cf9674fd, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2036996672}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 251bf69f50a08864b8bc8ce6cf9674fd, type: 3}
 --- !u!1001 &1972477305
 PrefabInstance:
@@ -1102,36 +1083,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 91e63f4d93a0c534db8f01aa8027dd68, type: 3}
---- !u!1 &2036996665 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6749082321507460706, guid: 251bf69f50a08864b8bc8ce6cf9674fd, type: 3}
-  m_PrefabInstance: {fileID: 1897019636}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &2036996672
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2036996665}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 365fc74c1c0264945acae290121b2d17, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  character: {fileID: 2036996665}
-  currentCharacter: {fileID: 2036996665}
-  otherCharacters:
-  - {fileID: 2036996665}
-  - {fileID: 6749082320480050844}
-  corpse: {fileID: 2076636820}
-  selectCharacter: 0
-  switchCharacter: 0
---- !u!95 &2036996674 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 3804663688967740638, guid: 251bf69f50a08864b8bc8ce6cf9674fd, type: 3}
-  m_PrefabInstance: {fileID: 1897019636}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2076636820
 GameObject:
   m_ObjectHideFlags: 0
@@ -1309,6 +1260,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1867861820798951281, guid: 77194774760049e419108387ff9582f2, type: 3}
+      propertyPath: speed
+      value: 1500
+      objectReference: {fileID: 0}
     - target: {fileID: 1867861820798951281, guid: 77194774760049e419108387ff9582f2, type: 3}
       propertyPath: canAttack
       value: 1

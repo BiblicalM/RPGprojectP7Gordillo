@@ -30,13 +30,17 @@ public class FireBallProjectile : MonoBehaviour
     IEnumerator DestroyFireBall()
     {
         //maybe make cooldown longer idk?
-        yield return new WaitForSeconds(20);
+        yield return new WaitForSeconds(12);
         Destroy(gameObject);
     }
 
-    void OnCollision2D(Collision collision)
+    void OnCollisionEnter2D(Collision2D collision)
     {
-        Destroy(gameObject);
+        if(collision.gameObject.tag == "Player")
+        {
+            Destroy(gameObject);
+        }
+        
     }
 
 

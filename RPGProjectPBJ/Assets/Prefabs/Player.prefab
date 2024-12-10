@@ -194,7 +194,7 @@ RectTransform:
   m_GameObject: {fileID: 3146531629516924978}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.5, y: 0.25, z: 1}
+  m_LocalScale: {x: 0.75, y: 0.075, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4472302945175074716}
@@ -203,7 +203,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 50}
+  m_AnchoredPosition: {x: 0, y: 25}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &7894362486225666017
@@ -461,6 +461,7 @@ GameObject:
   - component: {fileID: 33903927610166480}
   - component: {fileID: 3804663688967740638}
   - component: {fileID: 5864007107124604855}
+  - component: {fileID: 5858611699099653501}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -642,8 +643,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eef892295989e5140a3c08d6ba053db7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2000
+  speed: 1500
+  playerAnim: {fileID: 3804663688967740638}
+  slashEffect: {fileID: 0}
   powerType: 
   maxHealth: 20
   realHealth: 0
+  attackPower: 0
+  canAttack: 0
+  attackPoint: {fileID: 0}
+  attackRange: 0.5
+  enemyLayers:
+    serializedVersion: 2
+    m_Bits: 0
   healthBar: {fileID: 9077160921069293898}
+--- !u!114 &5858611699099653501
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6749082321507460706}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 365fc74c1c0264945acae290121b2d17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  character: {fileID: 6749082321507460706}
+  currentCharacter: {fileID: 6749082321507460706}
+  otherCharacters:
+  - {fileID: 6749082321507460706}
+  - {fileID: 0}
+  corpse: {fileID: 0}
+  selectCharacter: 0
+  switchCharacter: 0
