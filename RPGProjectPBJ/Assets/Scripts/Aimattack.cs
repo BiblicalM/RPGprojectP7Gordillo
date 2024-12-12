@@ -15,6 +15,7 @@ public class Aimattack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        mainCam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
         mousePos = mainCam.ScreenToWorldPoint(Input.mousePosition);
 
         Vector3 rotation = mousePos - transform.position;

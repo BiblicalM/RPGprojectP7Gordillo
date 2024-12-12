@@ -5,7 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class SwitchRoom : MonoBehaviour
 {
-    public int roomName;
+    
+    public string sceneToLoad;
+    public string exitName;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,11 +20,16 @@ public class SwitchRoom : MonoBehaviour
         
     }
 
-    private void OnCollisionEnter2D(Collision2D other)
+    void OnTriggerEnter2D(Collider2D collision)
     {
-        if (other.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Player"))
         {
-            SceneManager.LoadScene(roomName);
+            DontDestroyOnLoad(collision.gameObject);
+            PlayerPrefs.SetString("LastExitName", exitName);
+            SceneManager.LoadScene(sceneToLoad);
         }
+        
+        
+        
     }
 }

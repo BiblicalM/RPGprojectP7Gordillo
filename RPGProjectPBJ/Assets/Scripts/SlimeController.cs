@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -11,7 +12,7 @@ public class SlimeController : MonoBehaviour
     public float speed = 10;
 
     public Animator playerAnim;
-    public GameObject gameManager;
+    private GameManager gameManager;
     public Animator slashEffect;
     private SpriteRenderer playerSprites;
     public string powerType;
@@ -50,7 +51,7 @@ public class SlimeController : MonoBehaviour
             
             PlayerAttack();
         }
-
+        
     }
 
     public void PlayerMovement()
@@ -120,9 +121,27 @@ public class SlimeController : MonoBehaviour
 
     IEnumerator CoolDown()
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(2);
         coolDown = false;
 
+    }
+
+    public void SoulHeal(int souls)
+    {
+        
+        
+
+            realHealth += souls * 2;
+            attackPower += souls;
+            maxHealth += souls;
+        
+    }
+
+    public void Weapons(int sharpness)
+    {
+        
+            attackPower += sharpness;
+        
     }
 
 }
