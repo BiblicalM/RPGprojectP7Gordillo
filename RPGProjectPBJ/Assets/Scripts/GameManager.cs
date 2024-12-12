@@ -42,6 +42,7 @@ public class GameManager : MonoBehaviour
             lich = GameObject.FindGameObjectWithTag("Lich").GetComponent<EnemyHealth>();
             LichDied();
         }
+        
         PlayerDied();
         GameOver();
         
@@ -83,6 +84,7 @@ public class GameManager : MonoBehaviour
         if(player.realHealth <= 0)
         {
             gameOver = true;
+            
             deathMessageText.text = "YOU DIED!";
         }
     }

@@ -45,7 +45,7 @@ public class SlimeController : MonoBehaviour
     {
         PlayerMovement();
         healthBar.SetHealth(realHealth);
-        healthBar.SetMaxHealth(maxHealth);
+        if (realHealth > maxHealth) ;
         if (Input.GetKeyDown(KeyCode.Mouse0) && coolDown == false && canAttack)
         {
             
@@ -121,7 +121,7 @@ public class SlimeController : MonoBehaviour
 
     IEnumerator CoolDown()
     {
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(1);
         coolDown = false;
 
     }

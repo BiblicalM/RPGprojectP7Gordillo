@@ -238,7 +238,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemies:
   - {fileID: 561175601230902377, guid: 91e63f4d93a0c534db8f01aa8027dd68, type: 3}
-  - {fileID: 3238444985502099743, guid: 6bc49159e50a57c4d81340a2c09e78cd, type: 3}
   spawnEnemy: 0
 --- !u!4 &339829278
 Transform:
@@ -354,7 +353,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemies:
   - {fileID: 561175601230902377, guid: 91e63f4d93a0c534db8f01aa8027dd68, type: 3}
-  - {fileID: 3238444985502099743, guid: 6bc49159e50a57c4d81340a2c09e78cd, type: 3}
   spawnEnemy: 0
 --- !u!4 &447328736
 Transform:
@@ -714,7 +712,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemies:
   - {fileID: 561175601230902377, guid: 91e63f4d93a0c534db8f01aa8027dd68, type: 3}
-  - {fileID: 3238444985502099743, guid: 6bc49159e50a57c4d81340a2c09e78cd, type: 3}
   spawnEnemy: 0
 --- !u!4 &791554214
 Transform:
@@ -14294,7 +14291,7 @@ PrefabInstance:
       objectReference: {fileID: 56237352}
     - target: {fileID: 5864007107124604855, guid: 251bf69f50a08864b8bc8ce6cf9674fd, type: 3}
       propertyPath: speed
-      value: 500
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 6749082321507460706, guid: 251bf69f50a08864b8bc8ce6cf9674fd, type: 3}
       propertyPath: m_Name
@@ -14381,7 +14378,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemies:
   - {fileID: 561175601230902377, guid: 91e63f4d93a0c534db8f01aa8027dd68, type: 3}
-  - {fileID: 3238444985502099743, guid: 6bc49159e50a57c4d81340a2c09e78cd, type: 3}
   spawnEnemy: 0
 --- !u!4 &1277672676
 Transform:
@@ -14429,7 +14425,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemies:
   - {fileID: 561175601230902377, guid: 91e63f4d93a0c534db8f01aa8027dd68, type: 3}
-  - {fileID: 3238444985502099743, guid: 6bc49159e50a57c4d81340a2c09e78cd, type: 3}
   spawnEnemy: 0
 --- !u!4 &1416875262
 Transform:
@@ -14524,7 +14519,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1867861820798951281, guid: 77194774760049e419108387ff9582f2, type: 3}
       propertyPath: speed
-      value: 500
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 1867861820798951281, guid: 77194774760049e419108387ff9582f2, type: 3}
+      propertyPath: realHealth
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 2363135853163159761, guid: 77194774760049e419108387ff9582f2, type: 3}
       propertyPath: m_BackGroundColor.b
@@ -14642,7 +14641,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemies:
   - {fileID: 561175601230902377, guid: 91e63f4d93a0c534db8f01aa8027dd68, type: 3}
-  - {fileID: 3238444985502099743, guid: 6bc49159e50a57c4d81340a2c09e78cd, type: 3}
   spawnEnemy: 0
 --- !u!4 &1579110673
 Transform:
@@ -14729,7 +14727,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemies:
   - {fileID: 561175601230902377, guid: 91e63f4d93a0c534db8f01aa8027dd68, type: 3}
-  - {fileID: 3238444985502099743, guid: 6bc49159e50a57c4d81340a2c09e78cd, type: 3}
   spawnEnemy: 0
 --- !u!4 &1612570495
 Transform:
@@ -14994,7 +14991,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5290848372623581486, guid: 90b6c014865ae24418601944b8ee1497, type: 3}
       propertyPath: enemies.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
