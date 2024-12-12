@@ -25,6 +25,7 @@ public class SlimeController : MonoBehaviour
     public Transform attackPoint;
     public float attackRange = 0.5f;
     public LayerMask enemyLayers;
+    private bool isInvincible;
 
     public HealthUI healthBar;
     // Start is called before the first frame update
@@ -34,7 +35,7 @@ public class SlimeController : MonoBehaviour
         playerCollider = GetComponent<BoxCollider2D>();
         
         playerSprites = GetComponent<SpriteRenderer>();
-        
+        isInvincible = false;
 
         realHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
@@ -45,12 +46,16 @@ public class SlimeController : MonoBehaviour
     {
         PlayerMovement();
         healthBar.SetHealth(realHealth);
-        if (realHealth > maxHealth) ;
+        if (realHealth > maxHealth)
+        {
+            realHealth = maxHealth;
+        }
         if (Input.GetKeyDown(KeyCode.Mouse0) && coolDown == false && canAttack)
         {
             
             PlayerAttack();
         }
+        
         
     }
 
@@ -71,7 +76,14 @@ public class SlimeController : MonoBehaviour
             playerSprites.flipX = false;
         }
         
-       
+       if(verticalInput < 0 || verticalInput > 0)
+       {
+            playerAnim.SetBool("UpMove", true);
+       }
+        else
+        {
+            playerAnim.SetBool("UpMove", false);
+        }
 
         //rb.AddForce(Movement);
         playerAnim.SetFloat("Speed_f", Mathf.Abs(rb.velocity.x));
@@ -79,22 +91,17 @@ public class SlimeController : MonoBehaviour
 
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.gameObject.tag == "Corpse")
-        {
-            
-
-        }
-    }
+   
 
     public void TakeDamage( int damage)
     {
-        realHealth -= damage;
-        if(realHealth <= 0)
+        if(isInvincible == false)
         {
-            Debug.Log("Game Over");
+            realHealth -= damage;
+            isInvincible = true;
+            StartCoroutine(PlayerInvincible());
         }
+        
     }
     void PlayerAttack()
     {
@@ -124,6 +131,12 @@ public class SlimeController : MonoBehaviour
         yield return new WaitForSeconds(1);
         coolDown = false;
 
+    }
+    IEnumerator PlayerInvincible()
+    {
+        yield return new WaitForSeconds(1);
+
+        isInvincible = false;   
     }
 
     public void SoulHeal(int souls)

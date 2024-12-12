@@ -93,7 +93,13 @@ public class GameManager : MonoBehaviour
         if(lich.healthEnemy <= 0)
         {
             gameOver = true;
-            deathMessageText.text = "CONGRATS!\nYOU KILLED THE LICH!";
+            deathMessageText.text = "VICTORY!\nYOU KILLED THE LICH!";
         }
+    }
+
+    public void RestartGame()
+    {
+        SceneManager.LoadScene("Level 1");
+
     }
 }

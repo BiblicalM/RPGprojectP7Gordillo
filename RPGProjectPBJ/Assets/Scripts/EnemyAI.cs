@@ -20,6 +20,7 @@ public class EnemyAI : MonoBehaviour
     void Update()
     {
         EnemyMove();
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 
     void EnemyMove()
