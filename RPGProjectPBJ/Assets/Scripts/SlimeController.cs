@@ -46,16 +46,18 @@ public class SlimeController : MonoBehaviour
     {
         PlayerMovement();
         healthBar.SetHealth(realHealth);
+        healthBar.SetMaxHealth(maxHealth);
         if (realHealth > maxHealth)
         {
             realHealth = maxHealth;
         }
+        
         if (Input.GetKeyDown(KeyCode.Mouse0) && coolDown == false && canAttack)
         {
             
             PlayerAttack();
         }
-        
+        //PlayerDeath();
         
     }
 
@@ -144,7 +146,7 @@ public class SlimeController : MonoBehaviour
         
         
 
-            realHealth += souls * 2;
+            realHealth += (souls * 2);
             attackPower += souls;
             maxHealth += souls;
         
@@ -155,6 +157,14 @@ public class SlimeController : MonoBehaviour
         
             attackPower += sharpness;
         
+    }
+
+    void PlayerDeath()
+    {
+        if(realHealth <+0)
+        {
+            Destroy(gameObject);
+        }
     }
 
 }

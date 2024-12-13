@@ -259,7 +259,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4da4bd7d6cd4e042890df103781254a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 20
+  damage: 40
 --- !u!58 &1510597631961490507
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -514,7 +514,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 10
+  m_Mass: 5
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
@@ -527,7 +527,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!114 &7901838989535344852
 MonoBehaviour:
@@ -542,9 +542,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyHealth: {fileID: 8929358578877460676}
-  soul: {fileID: 7099651319392638264, guid: 36dda9e042708034aaf2b21293ef0735, type: 3}
+  soul: {fileID: 906627317542341340, guid: fcd6dd10ff3d34543a5f90d1e96c53e3, type: 3}
   healthEnemy: 0
-  maxHealthEnemy: 70
+  maxHealthEnemy: 200
 --- !u!95 &359542423824403485
 Animator:
   serializedVersion: 5

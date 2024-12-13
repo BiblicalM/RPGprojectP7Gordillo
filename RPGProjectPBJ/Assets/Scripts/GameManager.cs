@@ -9,10 +9,12 @@ public class GameManager : MonoBehaviour
 {
 
     public bool gameOver;
+    public GameObject camera;
     public TextMeshProUGUI deathMessageText;
     public Image startScreen;
     public Image pauseScreen;
     public Image gameOverScreen;
+    public Image tutorialScreen;
     public bool lichExists;
 
     private SlimeController player;
@@ -21,12 +23,16 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<SlimeController>();
-        
+        camera.SetActive(false);
         gameOver = false;
+        tutorialScreen.gameObject.SetActive(false);
         Time.timeScale = 1;
         pauseScreen.gameObject.SetActive(false);
         gameOverScreen.gameObject.SetActive(false);
-        
+        if(tutorialScreen || camera || startScreen == null)
+        {
+            return;
+        }
     }
 
     // Update is called once per frame
@@ -54,6 +60,8 @@ public class GameManager : MonoBehaviour
         if(gameOver == true)
         {
             Time.timeScale = 0;
+            camera.SetActive(true);
+            Destroy(player.gameObject);
             gameOverScreen.gameObject.SetActive(true);
         }
         
@@ -61,6 +69,7 @@ public class GameManager : MonoBehaviour
     public void StartGame()
     {
         SceneManager.LoadScene("Level 1");
+        Time.timeScale = 1;
     }
 
     public void ResumeGame()
@@ -97,9 +106,14 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void RestartGame()
+    public void Tutorial()
     {
-        SceneManager.LoadScene("Level 1");
+        tutorialScreen.gameObject.SetActive(true);
 
+    }
+
+    public void ReturnStartScreen()
+    {
+        tutorialScreen.gameObject.SetActive(false);
     }
 }

@@ -8,11 +8,11 @@ public class SoulsandWeapons : MonoBehaviour
     public int soulCount;
     
     public bool heal;
-    public Image uiZone;
+    
     // Start is called before the first frame update
     void Start()
     {
-        uiZone.gameObject.SetActive(false);
+        
     }
 
     // Update is called once per frame
@@ -25,7 +25,7 @@ public class SoulsandWeapons : MonoBehaviour
     {
         if(collision.gameObject.tag == "Player")
         {
-            uiZone.gameObject.SetActive(true);
+            
             SlimeController player = collision.gameObject.GetComponent<SlimeController>();
             if (heal)
             {
@@ -43,11 +43,7 @@ public class SoulsandWeapons : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Player")
-        {
-            uiZone.gameObject.SetActive(false);
-           
-        }
+        
     }
 
 
