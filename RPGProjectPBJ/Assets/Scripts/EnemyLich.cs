@@ -10,6 +10,8 @@ public class EnemyLich : MonoBehaviour
     
     private Animator bossAnim;
     private bool castSpell;
+
+    private AudioSource voice;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,6 +20,8 @@ public class EnemyLich : MonoBehaviour
         StartCoroutine(CastingTime());
         bossAnim = GetComponent<Animator>();
 
+        voice = GetComponent<AudioSource>();
+        voice.Play();
     }
 
     // Update is called once per frame

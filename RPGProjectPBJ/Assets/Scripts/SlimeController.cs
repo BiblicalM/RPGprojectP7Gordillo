@@ -28,6 +28,9 @@ public class SlimeController : MonoBehaviour
     private bool isInvincible;
 
     public HealthUI healthBar;
+
+    private AudioSource slash;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -39,6 +42,8 @@ public class SlimeController : MonoBehaviour
 
         realHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
+
+        slash = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -56,6 +61,7 @@ public class SlimeController : MonoBehaviour
         {
             
             PlayerAttack();
+            slash.Play();
         }
         //PlayerDeath();
         
