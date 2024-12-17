@@ -34,8 +34,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 190}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: -0.000016212, y: 264.47925}
+  m_SizeDelta: {x: 99.2412, y: 214.646}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7006447188714481085
 CanvasRenderer:
@@ -869,10 +869,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameOver: 0
+  camera: {fileID: 0}
   deathMessageText: {fileID: 3738578349618198105}
   startScreen: {fileID: 0}
   pauseScreen: {fileID: 377337325982637356}
   gameOverScreen: {fileID: 3885121070467674100}
+  tutorialScreen: {fileID: 0}
   lichExists: 0
 --- !u!1 &4897385167869038706
 GameObject:
@@ -1046,8 +1048,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 2500, y: 2500}
+  m_AnchoredPosition: {x: 44.906006, y: -159.21167}
+  m_SizeDelta: {x: 7668.26, y: 3455.2705}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2807425355235740113
 CanvasRenderer:
@@ -1492,8 +1494,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 100}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: 2.7275, y: 81.963}
+  m_SizeDelta: {x: 100.7793, y: 234.18}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &203141439658690841
 CanvasRenderer:

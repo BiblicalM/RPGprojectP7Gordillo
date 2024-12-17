@@ -3437,7 +3437,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7226621766473985022, guid: 30813e23cd47f1146955de195acbc50d, type: 3}
       propertyPath: maxHealthEnemy
-      value: 200
+      value: 20000
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

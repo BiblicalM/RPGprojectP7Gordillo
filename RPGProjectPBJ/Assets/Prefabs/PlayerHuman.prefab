@@ -587,7 +587,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eef892295989e5140a3c08d6ba053db7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1500
+  speed: 450
   playerAnim: {fileID: 14013358425128014}
   slashEffect: {fileID: 6801915544161442951}
   powerType: 

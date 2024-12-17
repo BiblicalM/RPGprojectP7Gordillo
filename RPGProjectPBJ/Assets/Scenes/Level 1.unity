@@ -14321,7 +14321,7 @@ PrefabInstance:
       objectReference: {fileID: 56237352}
     - target: {fileID: 5864007107124604855, guid: 251bf69f50a08864b8bc8ce6cf9674fd, type: 3}
       propertyPath: speed
-      value: 1500
+      value: 450
       objectReference: {fileID: 0}
     - target: {fileID: 6749082321507460706, guid: 251bf69f50a08864b8bc8ce6cf9674fd, type: 3}
       propertyPath: m_Name
@@ -14549,7 +14549,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1867861820798951281, guid: 77194774760049e419108387ff9582f2, type: 3}
       propertyPath: speed
-      value: 1500
+      value: 450
       objectReference: {fileID: 0}
     - target: {fileID: 1867861820798951281, guid: 77194774760049e419108387ff9582f2, type: 3}
       propertyPath: realHealth
